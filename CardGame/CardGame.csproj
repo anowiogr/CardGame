@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\boardproperty\backgrounds\backgroundWulcano.jpeg" />
+    <None Remove="images\boardproperty\fieldback.png" />
+    <None Remove="images\boardproperty\rewersCard.jpg" />
+    <None Remove="images\boardproperty\rewersCard.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="images\userproperty\" />
+    <Folder Include="images\characters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\boardproperty\backgrounds\backgroundWulcano.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\boardproperty\fieldback.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\boardproperty\rewersCard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
