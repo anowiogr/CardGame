@@ -37,27 +37,31 @@
             x:Name="User1"
             Grid.Row="2"
             Grid.Column="1"
+            Width="Auto"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
             HorizontalScrollBarVisibility="Auto"
-            VerticalScrollBarVisibility="Auto" />
+            IsEnabled="False"
+            VerticalScrollBarVisibility="Hidden" />
 
         <ScrollViewer
             x:Name="User2"
             Grid.Row="0"
             Grid.Column="1"
+            Width="Auto"
+            Height="Auto"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
             HorizontalScrollBarVisibility="Auto"
-            VerticalScrollBarVisibility="Auto" />
+            IsEnabled="False"
+            VerticalScrollBarVisibility="Hidden" 
+            VerticalAlignment="Bottom" />
 
         <StackPanel
             x:Name="CardPack"
             Grid.Row="1"
             Grid.Column="0"
             Width="300"
-            Height="300" 
-            HorizontalAlignment="Right"/>
+            Height="300"
+            HorizontalAlignment="Right" />
 
         <Button
             x:Name="ActionButton"

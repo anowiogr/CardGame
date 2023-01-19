@@ -8,16 +8,16 @@ using System.Windows.Media.Imaging;
 
 namespace CardGame
 {
-    public class View
+    public class ViewU2
     {
         protected Image back = null;
         public virtual string imagePath => $"images/{GetType().BaseType.Name}/{GetType().Name}.png";
 
         public Grid Grid { get; set; }
 
-        public View()
+        public ViewU2()
         {
-            Grid = MainWindow.GameBoard;
+            Grid = MainWindow.UserBoard2;
         }
 
         public virtual Image Image
@@ -46,3 +46,4 @@ namespace CardGame
         }
     }
 }
+

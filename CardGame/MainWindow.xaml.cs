@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
+using Image = System.Windows.Controls.Image;
 
 namespace CardGame
 {
@@ -46,12 +47,17 @@ namespace CardGame
         public static Grid UserBoard1 = new Grid();
         public static Grid UserBoard2 = new Grid();
 
+
+
         public const int Column_Row = 16;
         public static int ClickedTimes;
-
+        protected Image back;
+         
         public MainBoard[,] VisibleBoard;
-        public MainBoard[,] BoardU1;
-        public MainBoard[,] BoardU2;
+        public User1Board[,] BoardU1;
+        public User2Board[,] BoardU2;
+
+
 
         public MainWindow()
         {
@@ -82,23 +88,44 @@ namespace CardGame
 
             //Adding container for User1
             User1.Content = UserBoard1;
+            User1.HorizontalContentAlignment = HorizontalAlignment.Center;
 
             for (int i = 0; i < 5; i++)
             {
-                UserBoard1.ColumnDefinitions.Add(new ColumnDefinition());
-                UserBoard1.RowDefinitions.Add(new RowDefinition());
+                UserBoard1.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+                UserBoard1.RowDefinitions.Add(new RowDefinition { Height = new GridLength(40) });
             }
 
-            BoardU1 = new MainBoard[5, 1];
+            BoardU1 = new User1Board[5, 1];
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 1; j++)
                 {
-                    BoardU1[i, j] = new MainBoard { X = i, Y = j };
+                    BoardU1[i, j] = new User1Board { X = i, Y = j };
                 }
             }
 
-            
+            //Adding container for User2
+            User2.Content = UserBoard2;
+            User2.HorizontalContentAlignment = HorizontalAlignment.Center;
+            User2.VerticalContentAlignment = VerticalAlignment.Bottom;
+            User2.Background = new SolidColorBrush(Colors.Beige);
+
+            for (int i = 0; i < 5; i++)
+            {
+                UserBoard2.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+                UserBoard2.RowDefinitions.Add(new RowDefinition { Height = new GridLength(40) });
+            }
+
+            BoardU2 = new User2Board[5, 1];
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 1; j++)
+                {
+                    BoardU2[i, j] = new User2Board { X = i, Y = j };
+                }
+            }
+
             //Adding Pack schema to game
             ImageBrush Pack = new ImageBrush();
             Pack.ImageSource = new BitmapImage(new Uri("images/boardproperty/rewersCard.png", UriKind.Relative));
@@ -108,7 +135,7 @@ namespace CardGame
             ActionButton.Content = ActionText;
             ClickedTimes = 0;
             ActionButton.Background = new SolidColorBrush(Colors.IndianRed);
-            ActionText.Text = "KONIEC TURY";
+            ActionText.Text = "START";
 
 
 
@@ -122,15 +149,20 @@ namespace CardGame
         private void ActionButton_Click(object sender, RoutedEventArgs e)
         {
             ClickedTimes++;
-            if (ClickedTimes % 2 == 0 && ClickedTimes <= 14)
+            if (ClickedTimes == 0) 
             {
                 ActionButton.Background = new SolidColorBrush(Colors.IndianRed);
-                ActionText.Text = "ZAKOŃCZ TURĘ";
+                ActionText.Text = "START";
             }
-            else if (ClickedTimes % 2 != 0 && ClickedTimes <= 14)
+            else if (ClickedTimes % 2 == 0 && ClickedTimes != 0 && ClickedTimes <= 15)
             {
-                 ActionButton.Background = new SolidColorBrush(Colors.DarkRed);
-                 ActionText.Text = "TURA PRZECIWNIKA";
+                ActionButton.Background = new SolidColorBrush(Colors.IndianRed);
+                ActionText.Text = "TURA PRZECIWNIKA";
+            }
+            else if (ClickedTimes % 2 != 0 && ClickedTimes <= 15)
+            {
+                ActionButton.Background = new SolidColorBrush(Colors.DarkRed);
+                ActionText.Text = "ZAKOŃCZ TURĘ";
             }
             else
             {
