@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardGame
 {
-    class Characters
+    public class Characters : View
     {
 
     }

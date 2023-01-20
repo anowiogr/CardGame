@@ -46,6 +46,8 @@ namespace CardGame
         public static TextBlock ActionText = new TextBlock();
         public static Grid UserBoard1 = new Grid();
         public static Grid UserBoard2 = new Grid();
+        public static Grid UserProperty1 = new Grid();
+        public static Grid UserProperty2 = new Grid();
 
 
 
@@ -77,14 +79,19 @@ namespace CardGame
                 GameBoard.RowDefinitions.Add(new RowDefinition { Height = new GridLength(40) });
             }
 
-            VisibleBoard = new MainBoard[Column_Row, Column_Row];
-            for(int i =0; i < Column_Row; i++)
+            //VisibleBoard = new MainBoard[Column_Row, Column_Row];
+            //for(int i =0; i < Column_Row; i++)
+            // {
+            //    for(int j = 0; j < Column_Row; j++)
+            //    {
+            //       VisibleBoard[i, j] = new MainBoard { X = i, Y = j };
+            //    }
+            // }
+
+            Layer<MainBoard> fieldLayer = new Layer<MainBoard>(Column_Row, Column_Row, new Dictionary<Type, int>
             {
-                for(int j = 0; j < Column_Row; j++)
-                {
-                    VisibleBoard[i, j] = new MainBoard { X = i, Y = j };
-                }
-            }
+                { typeof(MainBoard), Column_Row * Column_Row }
+            });
 
             //Adding container for User1
             User1.Content = UserBoard1;
@@ -126,10 +133,58 @@ namespace CardGame
                 }
             }
 
-            //Adding Pack schema to game
-            ImageBrush Pack = new ImageBrush();
-            Pack.ImageSource = new BitmapImage(new Uri("images/boardproperty/rewersCard.png", UriKind.Relative));
-            CardPack.Background = Pack;
+
+            //Adding property to board
+            
+            SProperty1.Content = UserProperty1;
+           // UserProperty1.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+
+            RowDefinition RowGold = new RowDefinition();
+            ImageBrush Gold = new ImageBrush();
+            Gold.ImageSource = new BitmapImage(new Uri("images/userproperty/gold.png", UriKind.Relative));
+            RowGold.Height = new GridLength(40);
+
+            RowDefinition RowIron = new RowDefinition();
+            ImageBrush Iron = new ImageBrush();
+            Iron.ImageSource = new BitmapImage(new Uri("images/userproperty/iron.png", UriKind.Relative));
+            RowIron.Height = new GridLength(40);
+
+            RowDefinition RowLife = new RowDefinition();
+            ImageBrush Life = new ImageBrush();
+            Life.ImageSource = new BitmapImage(new Uri("images/userproperty/life.png", UriKind.Relative));
+            RowLife.Height = new GridLength(40);
+
+            RowDefinition RowOil = new RowDefinition();
+            ImageBrush Oil = new ImageBrush();
+            Oil.ImageSource = new BitmapImage(new Uri("images/userproperty/oil.png", UriKind.Relative));
+            RowOil.Height = new GridLength(40);
+
+            RowDefinition RowFC = new RowDefinition();
+            ImageBrush FC = new ImageBrush();
+            FC.ImageSource = new BitmapImage(new Uri("images/userproperty/fieldCops.png", UriKind.Relative));
+            RowFC.Height = new GridLength(40);
+
+            
+           
+            UserProperty1.Background = new SolidColorBrush(Colors.Blue);
+            UserProperty1.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+            UserProperty1.RowDefinitions.Add(RowLife);
+            UserProperty1.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+            UserProperty1.RowDefinitions.Add(RowGold);
+            UserProperty1.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+            UserProperty1.RowDefinitions.Add(RowIron);
+            UserProperty1.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+            UserProperty1.RowDefinitions.Add(RowOil);
+            UserProperty1.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+            UserProperty1.RowDefinitions.Add(RowFC);
+
+           /* SProperty2.Content = UserProperty2;
+            UserProperty2.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(41) });
+            UserProperty2.RowDefinitions.Add(RowLife);
+            UserProperty2.RowDefinitions.Add(RowGold);
+            UserProperty2.RowDefinitions.Add(RowIron);
+            UserProperty2.RowDefinitions.Add(RowOil);
+            UserProperty2.RowDefinitions.Add(RowFC);*/
 
             //Create Button
             ActionButton.Content = ActionText;

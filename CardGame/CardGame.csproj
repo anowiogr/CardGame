@@ -12,11 +12,27 @@
     <None Remove="images\boardproperty\fieldback.png" />
     <None Remove="images\boardproperty\rewersCard.jpg" />
     <None Remove="images\boardproperty\rewersCard.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="images\userproperty\" />
-    <Folder Include="images\characters\" />
+    <None Remove="images\characters\alchemik.png" />
+    <None Remove="images\characters\gawediarz.png" />
+    <None Remove="images\characters\guślarz.png" />
+    <None Remove="images\characters\handlarz.png" />
+    <None Remove="images\characters\harlekin.png" />
+    <None Remove="images\characters\joker.png" />
+    <None Remove="images\characters\kuglarz.png" />
+    <None Remove="images\characters\mistrzKam.png" />
+    <None Remove="images\characters\mistyk.png" />
+    <None Remove="images\characters\rycerz.png" />
+    <None Remove="images\characters\saper.png" />
+    <None Remove="images\characters\smok.png" />
+    <None Remove="images\characters\szejk.png" />
+    <None Remove="images\characters\taran.png" />
+    <None Remove="images\characters\wloscianin.png" />
+    <None Remove="images\characters\wykidajlo.png" />
+    <None Remove="images\userproperty\fieldCops.png" />
+    <None Remove="images\userproperty\gold.png" />
+    <None Remove="images\userproperty\iron.png" />
+    <None Remove="images\userproperty\life.png" />
+    <None Remove="images\userproperty\oil.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +43,69 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\boardproperty\rewersCard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\alchemik.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\gawediarz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\guślarz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\handlarz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\harlekin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\joker.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\kuglarz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\mistrzKam.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\mistyk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\rycerz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\saper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\smok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\szejk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\taran.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\wloscianin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\characters\wykidajlo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\userproperty\fieldCops.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\userproperty\gold.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\userproperty\iron.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\userproperty\life.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\userproperty\oil.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
